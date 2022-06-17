@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const weatherApp = async (cityName) => {
         let city_name = `${cityName}`;
         try{
-            const api = `http://api.weatherapi.com/v1/current.json?key=7c736ece839f47e58b2152411221406&q=${city_name}&aqi=no`;
+            const api = `https://api.weatherapi.com/v1/current.json?key=7c736ece839f47e58b2152411221406&q=${city_name}&aqi=no`;
             const response = await fetch(api);
             if(response.status !== 200){
                 new Error(`something want wrong! Status code : ${response.status}`)
@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if(!data.current.is_day){
                 timeOfDay = 'night';
             }
+            
             if(code == 1000){
                 btn.style.background = 'rgb(110, 9, 241)';
                 appContainer.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .2)),url(./img/${timeOfDay}/clear.jpg)`;
