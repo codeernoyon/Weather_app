@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 new Error(`something want wrong! Status code : ${response.status}`)
             }
             const data = await response.json();
-            console.log(data);
             ///////update infos/////////////
             location.innerHTML = `${data.location.name}`;
             weatherImg.src = `${data.current.condition.icon}`;
@@ -98,7 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 appContainer.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .2)),url(./img/${timeOfDay}/clear.jpg)`;
             }
             else if(code == 1195||
-                code == 1243){
+                code == 1243||
+                code == 1063){
                 appContainer.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),url(./img/${timeOfDay}/rainy.jpg)`;
             }
             else if(
