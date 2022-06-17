@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: "Comfortaa", cursive;
+  overflow: hidden;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  height: inherit;
+  width: inherit;
+  color: inherit;
+}
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+#app_container {
+  height: 100vh;
+  width: 100vw;
+  background: center center no-repeat;
+  background-size: cover;
+  .warper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    .title {
+      position: absolute;
+      left: 5%;
+      top: 10%;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+    .locations {
+      display: flex;
+      justify-content: space-between;
+      align-items: center !important;
+      position: absolute;
+      bottom: 10%;
+      left: 5%;
+      width: 55%;
+      height: 200px;
+      #temperature {
+        font-size: 3rem;
+        margin-right: 30px;
+      }
+      .location {
+        #location {
+          font-size: 2.4rem;
+          margin-right: 40px;
+          margin-bottom: 0.5rem;
+        }
+        .country_name {
+          text-transform: capitalize;
+          margin-left: 0.3rem;
+        }
+        .time {
+          margin-top: 0.5rem;
+        }
+      }
+      .weather {
+        .weather_icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          img {
+            width: 50px;
+          }
+          #weather_type {
+            display: block;
+            font-size: 1.1rem;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+    .weather_details {
+      padding-left: 2rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(3px);
+      .weather_details_warper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        #form {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          height: 4rem;
+          position: relative;
+          #location_input {
+            height: 3rem;
+            width: 85%;
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 0.3rem 0;
+            color: #fff;
+          }
+          #search_btn {
+            width: 15%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+            color: #fff;
+            font-size: 2rem;
+          }
+          &::before {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 0;
+            width: 75%;
+            height: 1px;
+            background: #fff;
+            z-index: 2;
+          }
+        }
+        .country_list {
+          width: 100%;
+          height: auto;
+          padding: 1rem 0;
+          position: relative;
+          .country_list_warper {
+            display: flex;
+            flex-direction: column;
+            .country {
+              margin: 1rem 0;
+              color: rgb(245, 242, 242);
+              cursor: pointer;
+            }
+          }
+          &::before {
+            position: absolute;
+            content: " ";
+            bottom: 0;
+            left: 0;
+            width: 90%;
+            height: 1px;
+            background: rgba(219, 219, 219, 0.801);
+            z-index: 2;
+          }
+        }
+        .weather_info {
+          width: 80%;
+          height: auto;
+          padding: 2rem 0;
+          position: relative;
+          .weather_info_title {
+            font-size: 1.2rem;
+          }
+          .coludy {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .humidity {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .wind {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          &::before {
+            position: absolute;
+            content: " ";
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: rgba(219, 219, 219, 0.801);
+            z-index: 2;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #app_container {
+    .warper {
+      .locations {
+        width: 54%;
+        flex-wrap: wrap !important;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 920px) {
+  #app_container {
+    .warper {
+      .title {
+        top: 5%;
+      }
+      .locations {
+        width: 90%;
+        top: 10%;
+      }
+      .weather_details {
+        padding: 2rem 0;
+        position: absolute;
+        width: 100%;
+        left: 0%;
+        top: 30%;
+        height: 70vh;
+        .weather_details_warper {
+          margin: 0 auto;
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 420px) {
+  #app_container {
+    .warper {
+      .locations {
+        width: 90%;
+      }
+      #temperature {
+        font-size: 2.5rem !important;
+      }
+      .location {
+        #location {
+          font-size: 1.5rem !important;
+        }
+      }
+      .weather_details {
+        padding: 1rem 0;
+        top: 45%;
+        height: 55vh;
+        .weather_details_warper {
+          margin: 0 auto;
+          .country_list {
+            .country_list_warper {
+              .country {
+                margin: 0.5rem 0;
+                cursor: pointer;
+              }
+            }
+          }
+          .weather_info {
+            padding: 1rem 0;
+            .coludy {
+              margin: 0.8rem 0;
+            }
+            .humidity {
+              margin: 0.8rem 0;
+            }
+            .wind {
+              margin: 0.8rem 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

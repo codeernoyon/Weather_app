@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather</title>
+  </head>
+  <body>
+    <div id="app_container">
+      <div class="warper">
+        <div class="title">
+          <span class="title_text">the.Weather</span>
+        </div>
+        <div class="locations">
+          <div class="temp">
+            <div><span id="temperature"></span></div>
+          </div>
+          <div class="location">
+            <span id="location"></span>
+            <div class="country_name">bangladesh</div>
+            <div class="time">
+              <span id="time"></span>
+              <span>-</span>
+              <span id="date"> </span>
+            </div>
+          </div>
+          <div class="weather">
+            <div class="weather_icon">
+              <img src="" alt="sun" id="weather_img" />
+              <span id="weather_type"></span>
+            </div>
+          </div>
+        </div>
+        <div class="weather_details">
+          <div class="weather_details_warper">
+            <form action="submit" id="form">
+              <input
+                type="text"
+                id="location_input"
+                placeholder="Search Location"
+              />
+              <button type="submit" id="search_btn">
+                <i class="fa-solid fa-magnifying-glass-location"></i>
+              </button>
+            </form>
+            <div class="country_list">
+              <ul class="country_list_warper">
+                <li class="country">United States</li>
+                <li class="country">New York</li>
+                <li class="country">Netherland</li>
+                <li class="country">California</li>
+              </ul>
+            </div>
+            <div class="weather_info">
+              <span class="weather_info_title">Weather Details</span>
+              <div class="coludy">
+                <span class="cloudy_title">Cloudy</span
+                ><span class="cloudy_percentage"></span>
+              </div>
+              <div class="humidity">
+                <span class="humidity_title">Humidity</span
+                ><span class="humidity_percentage">55%</span>
+              </div>
+              <div class="wind">
+                <span class="wind_title">Wind</span>
+                <span class="wind_percentage"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/107953a3bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
