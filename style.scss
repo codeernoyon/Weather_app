@@ -116,6 +116,12 @@ li {
             outline: none;
             padding: 0.3rem 0;
             color: #fff;
+            font-size: 1.2rem;
+
+            &::placeholder {
+              font-size: 1.2rem;
+              text-transform: capitalize;
+            }
           }
           #search_btn {
             width: 15%;
