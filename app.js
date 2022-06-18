@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 new Error(`something want wrong! Status code : ${response.status}`)
             }
             const data = await response.json();
-            console.log(data);
             ///////update infos/////////////
             location.innerHTML = `${data.location.name}`;
             weatherImg.src = `${data.current.condition.icon}`;
