@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const CurrentApi = `https://ipinfo.io/json?token=${myToken}`;
         const response = await fetch(CurrentApi);
         const data = await response.json();
-        console.log(data);
         if(currentInput === undefined){
             weatherApp(data.city);
         }else{
@@ -68,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 new Error(`something want wrong! Status code : ${response.status}`)
             }
             const data = await response.json();
-            console.log(data);
             ///////update infos/////////////
             location.innerHTML = `${data.location.name}`;
             weatherImg.src = `${data.current.condition.icon}`;
@@ -96,11 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if(code == 1000){
                 btn.style.background = 'rgb(110, 9, 241)';
                 appContainer.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .2)),url(./img/${timeOfDay}/clear.jpg)`;
+                appContainer.style.transition = `1s linear;`
             }
             else if(code == 1195||
                 code == 1243||
                 code == 1063){
                 btn.style.background = 'rgb(110, 9, 241)';
+                appContainer.style.transition = `1s linear;`
                 appContainer.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),url(./img/${timeOfDay}/rainy.jpg)`;
             }
             ///////day//////
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 code == 1278 ||
                 code == 1281 
             ){
-                btn.style.background = 'rgb(27, 2, 95)'
+                btn.style.background = 'rgb(27, 2, 95)';
                 appContainer.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),url(./img/${timeOfDay}/cloudy.jpg)`;
             }
         } catch(error){
