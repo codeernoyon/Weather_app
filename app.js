@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateTime = document.querySelector('#time');
     const updateDate = document.querySelector('#date');
     const btn = document.querySelector('#search_btn');
+    const  weatherDetails = document.querySelector('.weather_details');
 
 
     ////////Current location//////////
@@ -67,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 new Error(`something want wrong! Status code : ${response.status}`)
             }
             const data = await response.json();
+            console.log(data);
             ///////update infos/////////////
             location.innerHTML = `${data.location.name}`;
             weatherImg.src = `${data.current.condition.icon}`;
@@ -98,7 +100,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             else if(code == 1195||
                 code == 1243||
-                code == 1063){
+                code == 1063||
+                code == 1066||
+                code == 1072||
+                code == 1087||
+                code == 1240||
+                code == 1201){
                 btn.style.background = 'rgb(110, 9, 241)';
                 appContainer.style.transition = `1s linear;`
                 appContainer.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),url(./img/${timeOfDay}/rainy.jpg)`;
@@ -123,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             ///////night//////
             if(timeOfDay =='night'){
-                btn.style.background = 'rgb(27, 2, 95)'
+                btn.style.background = 'rgb(27, 2, 95)';
             }
             else if(code == 1002 ||
                 code == 1005 ||
