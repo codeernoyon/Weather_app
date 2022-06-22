@@ -18,11 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ////////Current location//////////
     const currentLocation = async(currentInput) => {
-            // const myToken = `f2af929c656912`;
             const CurrentApi = `https://json.geoiplookup.io/`;
             const response = await fetch(CurrentApi);
             const data = await response.json();
-            console.log(data);
             if (currentInput === undefined) {
                 weatherApp(data.district);
             } else {
